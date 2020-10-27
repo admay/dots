@@ -1,11 +1,8 @@
-#
-# ~/.bash_profile
-#
+# .bash_profile
 
+# Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
+	. ~/.bashrc
 fi
 
-[ -s "/home/michael/.jabba/jabba.sh" ] && source "/home/michael/.jabba/jabba.sh"
-
-export PATH="$HOME/.cargo/bin:$PATH"
+# User specific environment and startup programs
