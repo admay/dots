@@ -4,7 +4,7 @@
 
 export ZSH="/home/a/.oh-my-zsh"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git django docker zsh-autosuggestions zsh-syntax-highlighting)
 
 ZSH_THEME="spaceship"
 
