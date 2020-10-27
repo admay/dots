@@ -49,6 +49,7 @@ libXrandr
 alsa-lib
 mesa-libEGL
 libXdamage
+kate
 mesa-libGL
 libXScrnSaver
 thefuck
