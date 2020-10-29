@@ -11,9 +11,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'raimondi/delimitmate'
 Plugin 'bhurlow/vim-parinfer'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'luochen1990/rainbow'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-repeat'
@@ -21,21 +18,25 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'machakann/vim-highlightedyank'
-Plugin 'junegunn/goyo.vim'
+
+"" All Langs
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+
+"" Infra
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
+
+"" Rust
+Plugin 'rust-lang/rust.vim'
+
+"" Python
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'rls',
-                \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-                \ 'whitelist': ['rust'],
-                \ })
-endif
+let g:syntastic_rust_checkers = ['cargo']
 
 let g:asyncomplete_auto_popup = 0
 
