@@ -2,7 +2,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZSH="/home/a/.oh-my-zsh"
+export ZSH="/home/michael/.oh-my-zsh"
 
 plugins=(git django docker zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -32,14 +32,14 @@ eval $(thefuck --alias)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/a/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/michael/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/a/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/a/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/michael/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/michael/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/a/miniconda3/bin:$PATH"
+        export PATH="/home/michael/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
