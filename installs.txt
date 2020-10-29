@@ -1,0 +1,58 @@
+script installs - do dnf first
+------------------------------
+rust: curl https://sh.rustup.rs -sSf | sh
+
+vundle: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+kitty themes:
+git clone --depth 1 http://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+cd ~/.config/kitty
+ln -s ./kitty-themes/themes/Neutron.conf ~/.config/kitty/theme.conf
+
+oh-my-zsh: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+skd-man:
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+anaconda:
+just follow this https://docs.anaconda.com/anaconda/install/
+anaconda sucks and can't be automated
+
+
+dnf installs
+------------
+git
+vim
+zsh
+fontawesome-fonts
+ruby
+ruby-devel
+make
+gcc
+ruby-devel
+kitty
+tmux
+cmake
+gcc-c++
+python3-devel
+python3
+go
+node
+pip3
+npm
+libXcomposite
+libXcursor
+libXi
+libXtst
+libXrandr
+alsa-lib
+mesa-libEGL
+libXdamage
+kate
+mesa-libGL
+libXScrnSaver
+thefuck
+docker
+node
+npm
