@@ -38,6 +38,10 @@ call vundle#end()
 
 let g:syntastic_rust_checkers = ['cargo']
 
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["py", "python"] }
+
 let g:asyncomplete_auto_popup = 0
 
 function! s:check_back_space() abort
