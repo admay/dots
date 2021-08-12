@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+apps=("nvim" "git" "docker" "zsh" "rust" "alacritty" "tmux")
+
+for app in "${apps[@]}"; do
+    echo "Initializing $app"
+    bash "./$app/init"
+    if [[ -f "./$app/test" ]]; then
+        echo "Testing $app"
+        bash "./$app/test"
+    fi
+done

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Bootstrapping system"
+echo "This will ask for user input so don't walk away and expect things to happen"
+
+echo "Updating system packages"
+sudo apt-get update
+
+echo "Updating powerline fonts"
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+echo "Installing nightly Neovim"
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+sudo update-alternatives --install $(which vim) vim $(which nvim) 10
+
+echo "Making directory structure"
+mkdir -p ~/backups/dotfiles/
+mkdir -p ~/workspace/
+mkdir -p ~/workspace/work-home-base
+mkdir -p ~/workspace/personal-home-base
+
+echo "Done"
+
+./zsh/init

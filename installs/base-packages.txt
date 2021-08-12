@@ -1,0 +1,4 @@
+apt,tmux
+apt,neofetch
+apt,tree
+apt,snapd

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+readonly base_dir=$(git rev-parse --show-toplevel)
+
+# Paq Neovim
+if [[ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/paqs/opt/paq-nvim" ]]
+then
+    git clone https://github.com/savq/paq-nvim.git \
+        "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/paq-nvim
+else
+    echo "Neovim Paq is already installed"
+fi
+
+# Config
+echo "Copying configuration files to nvim config directory"
+mkdir -p ~/.config/nvim
+cp -r $base_dir/nvim/init.lua $base_dir/nvim/lua $base_dir/nvim/after ~/.config/nvim/
+
+# Language servers
+echo "Installing the bash language server"
+yarn global add bash-language-server
+
+# Install Neovim packages
+echo "Neovim setup complete"
+
+echo
+echo "Run nvim +PaqInstall to finish setup"
+echo

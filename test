@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Test hostname"
+HOSTNAME=$(hostname)
+test "$HOSTNAME" = "david-macbook"
+
+echo "Test brews"
+test -x "$(which git)"
+test -x "$(which nvim)"
+
+echo "Test folders"
+test -d ~/dev
+test -d ~/work
+
+echo "Test zsh/oh-my-zsh"
+test -x "$(which zsh)"
+test -d ~/.oh-my-zsh

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ ! -x $(command -v rustup) ]]
+then
+    echo "Installing rust toolchain"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+    echo "Rustup is already installed, skipping"
+fi
+
+readonly rust_analyzer_path="$HOME/.local/bin/rust-analyzer"
+if [[ ! -x $(command -v rust-analyzer) ]]
+then
+    echo "Installing rust-analyzer"
+    mkdir -p $HOME/.local/bin
+    touch $rust_analyzer_path
+    curl -L \
+        https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | \
+        gunzip -c - > $rust_analyzer_path
+    chmod +x ~/.local/bin/rust-analyzer
+else
+    echo "Rust analyzer is already installed, skipping"
+fi
+
+echo "Sourceing cargo environment"
+source ~/.cargo/env

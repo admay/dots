@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+test -x $(which docker)
+test -x $(which docker-compose)

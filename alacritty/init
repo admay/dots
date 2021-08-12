@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+readonly base_dir=$(git rev-parse --show-toplevel)
+
+# config
+mkdir -p ~/.config/alacritty/
+cp $base_dir/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
