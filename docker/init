@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 readonly base_dir=$(git rev-parse --show-toplevel)
+readonly config_source="$base_dir/docker/daemon.json"
+readonly config_dest="/etc/docker/daemon.json"
 
 echo "Installing Docker"
 if [[ -x $(which docker) ]]
@@ -22,6 +24,10 @@ fi
 
 
 echo "Updating docker daemon configuration"
-sudo cp $base_dir/docker/daemon.json /etc/docker/daemon.json
+DIFF=$(diff $config_source $config_dest)
+if [[ $DIFF -ne 0 ]]
+then
+    sudo cp $config_source $dest
+fi
 
 echo "Restart the Docker daemon for changes to take effect"
