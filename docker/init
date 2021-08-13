@@ -4,7 +4,6 @@ readonly base_dir=$(git rev-parse --show-toplevel)
 readonly config_source="$base_dir/docker/daemon.json"
 readonly config_dest="/etc/docker/daemon.json"
 
-echo "Installing Docker"
 if [[ -x $(which docker) ]]
 then
     echo "Docker is already installed on the system, skipping"
@@ -28,6 +27,5 @@ DIFF=$(diff $config_source $config_dest)
 if [[ $DIFF -ne 0 ]]
 then
     sudo cp $config_source $dest
+    echo "Restart the Docker daemon for changes to take effect"
 fi
-
-echo "Restart the Docker daemon for changes to take effect"
