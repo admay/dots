@@ -3,7 +3,7 @@
 readonly base_dir=$(git rev-parse --show-toplevel)
 
 readonly config_source="$base_dir/alacritty/alacritty.yml"
-readonly config_dir="~/.config/alacritty"
+readonly config_dir="$HOME/.config/alacritty"
 readonly config_dest="$config_dir/alacritty.yml"
 
 # config

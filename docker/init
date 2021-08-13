@@ -22,11 +22,13 @@ else
 fi
 
 
-echo "Updating docker daemon configuration"
 DIFF=$(diff $config_source $config_dest)
 if [[ $? -ne 0 ]]
 then
+    echo "Updating docker daemon configuration"
     echo "Copying Docker daemon config to $config_dest"
     sudo cp $config_source $dest
     echo "Restart the Docker daemon for changes to take effect"
+else
+    echo "Docker daemon configuration is up to date"
 fi
