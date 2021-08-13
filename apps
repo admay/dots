@@ -2,7 +2,15 @@
 
 set -e
 
-apps=("nvim" "git" "docker" "zsh" "rust" "alacritty" "tmux")
+apps=(
+    "nvim"
+    "git"
+    "docker"
+    "zsh"
+    "rust"
+    "alacritty"
+    "tmux"
+)
 
 for app in "${apps[@]}"; do
     echo "Initializing $app"
