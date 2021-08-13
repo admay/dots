@@ -2,6 +2,18 @@
 
 readonly base_dir=$(git rev-parse --show-toplevel)
 
+readonly config_source="$base_dir/alacritty/alacritty.yml"
+readonly config_dir="~/.config/alacritty"
+readonly config_dest="$config_dir/alacritty.yml"
+
 # config
-mkdir -p ~/.config/alacritty/
-cp $base_dir/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+if [[ ! -d $config_dir ]]; then
+    mkdir -p $config_dir
+    touch $config_dest
+fi
+
+DIFF=$(diff $config_source $config_dest)
+if [[ ! $? -eq 0 ]]; then
+    echo "Copying Alacritty config to $config_dest"
+    cp $config_source $config_dest
+fi
