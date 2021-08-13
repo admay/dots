@@ -24,7 +24,7 @@ fi
 
 echo "Updating docker daemon configuration"
 DIFF=$(diff $config_source $config_dest)
-if [[ $DIFF -ne 0 ]]
+if [[ $? -ne 0 ]]
 then
     sudo cp $config_source $dest
     echo "Restart the Docker daemon for changes to take effect"
