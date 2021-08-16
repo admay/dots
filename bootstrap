@@ -15,11 +15,26 @@ cd fonts
 cd ..
 rm -rf fonts
 
+echo "Installing Fira Code fonts"
+sudo apt install fonts-firacode
+
 echo "Installing nightly Neovim"
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
 sudo update-alternatives --install $(which vim) vim $(which nvim) 10
+
+echo "Installing ripgrep"
+sudo apt-get install sudo apt-get install ripgrep
+
+echo "Installing fd find"
+sudo apt-get install fd-find
+
+echo "Installing locate"
+sudo apt install locate
+
+echo "Installing emacs"
+sudo apt-get install emacs
 
 echo "Making directory structure"
 mkdir -p ~/backups/dotfiles/
