@@ -1,3 +1,4 @@
+# Let alacritty set the TERM
 env:
   TERM: xterm-256color
 
