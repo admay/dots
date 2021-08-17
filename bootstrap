@@ -25,7 +25,7 @@ sudo apt-get install neovim
 sudo update-alternatives --install $(which vim) vim $(which nvim) 10
 
 echo "Installing ripgrep"
-sudo apt-get install sudo apt-get install ripgrep
+sudo apt-get install ripgrep
 
 echo "Installing fd find"
 sudo apt-get install fd-find
@@ -35,6 +35,10 @@ sudo apt install locate
 
 echo "Installing emacs"
 sudo apt-get install emacs
+
+echo "Installing SDK Man"
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 echo "Making directory structure"
 mkdir -p ~/backups/dotfiles/
