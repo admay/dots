@@ -5,8 +5,8 @@ vim.cmd('filetype plugin indent on')
 vim.cmd('syntax enable')
 vim.cmd('set cpoptions+=x')
 -- No need to remap space to no op when using comma as leader
--- vim.cmd('noremap <space> <Nop>')
-vim.cmd('let mapleader=","')
+vim.cmd('noremap <Space> <Nop>')
+vim.cmd('let mapleader=" "')
 set_options({
     -- systematic
     encoding = 'utf-8',

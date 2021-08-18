@@ -38,7 +38,8 @@ fi
 
 if [[ ! "$DIFF_LUA" == "" ]]; then
     echo "Copying Neovim lua to $nvim_lua"
-    cp "$base_dir/nvim/lua" $nvim_lua
+    echo cp -r "$base_dir/nvim/lua" $nvim_dir
+    cp -r "$base_dir/nvim/lua" $nvim_dir
 else
     echo "Neovim lua is up to date, skipping"
 fi
