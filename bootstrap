@@ -2,50 +2,54 @@
 
 set -e
 
-echo "Bootstrapping system"
-echo "This will ask for user input so don't walk away and expect things to happen"
+update_apt () {
+    sudo apt-get update
+}
 
-echo "Updating system packages"
-sudo apt-get update
+install_apt_packages() {
+    sudo add-apt-repository ppa:neovim-ppa/unstable
 
-echo "Updating powerline fonts"
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
+    sudo apt-get install \
+        fonts-firacode \
+        neovim \
+        ripgrep \
+        fd-find \
+        locate \
+        emacs
 
-echo "Installing Fira Code fonts"
-sudo apt install fonts-firacode
 
-echo "Installing nightly Neovim"
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim
-sudo update-alternatives --install $(which vim) vim $(which nvim) 10
+    echo "Updating default vim"
+    sudo update-alternatives --install $(which vim) vim $(which nvim) 10
+}
 
-echo "Installing ripgrep"
-sudo apt-get install ripgrep
+install_custom () {
+    echo "Installing SDK Man"
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+}
 
-echo "Installing fd find"
-sudo apt-get install fd-find
+install_powerline_fonts () {
+    echo "Updating powerline fonts"
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
+}
 
-echo "Installing locate"
-sudo apt install locate
 
-echo "Installing emacs"
-sudo apt-get install emacs
+make_base_dirs() {
+    echo "Making directory structure"
+    mkdir -p ~/backups/dotfiles/
+    mkdir -p ~/workspace/
+}
 
-echo "Installing SDK Man"
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+main() {
+    update_apt
+    install_apt_packages
+    install_custom
+    install_powerline_fonts
+    make_base_dirs
+}
 
-echo "Making directory structure"
-mkdir -p ~/backups/dotfiles/
-mkdir -p ~/workspace/
-mkdir -p ~/workspace/work-home-base
-mkdir -p ~/workspace/personal-home-base
-
-echo "Done"
-
-./zsh/init
+main "$@"
