@@ -15,11 +15,19 @@ install_apt_packages() {
         ripgrep \
         fd-find \
         locate \
-        emacs
-
+        emacs \
+        tmux \
+        neofetch \
+        tree \
+        snapd
 
     echo "Updating default vim"
     sudo update-alternatives --install $(which vim) vim $(which nvim) 10
+}
+
+install_snap_packages () {
+    sudo snap install \
+        tandem
 }
 
 install_custom () {
@@ -47,6 +55,7 @@ make_base_dirs() {
 main() {
     update_apt
     install_apt_packages
+    install_snap_packages
     install_custom
     install_powerline_fonts
     make_base_dirs
