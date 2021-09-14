@@ -32,7 +32,7 @@ alias yum='sudo yum'
 alias mount='sudo mount'
 alias sc='source ~/.zshrc'
 alias ec='nvim ~/.zshrc'
-alias mux='tmux'
+alias mux='tmuxinator'
 
 # The Fuck
 eval $(thefuck --alias)
