@@ -1,9 +1,14 @@
 local vim = vim
 local set_options = require('common').set_options
 
+-- Theme
+vim.api.nvim_command('colorscheme onedark')
+
+-- Things
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax enable')
 vim.cmd('set cpoptions+=x')
+
 -- No need to remap space to no op when using comma as leader
 vim.cmd('noremap <Space> <Nop>')
 vim.cmd('let mapleader=" "')

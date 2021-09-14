@@ -7,5 +7,3 @@ vim.g.nord_uniform_diff_background = 1
 vim.g.nord_underline = 1
 vim.g.nord_italic = 1
 vim.g.nord_italic_comments = 1
-
-vim.api.nvim_command('colorscheme nord')

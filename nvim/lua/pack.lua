@@ -9,8 +9,8 @@ paq 'nvim-lua/plenary.nvim'
 paq 'nvim-lua/popup.nvim'
 
 -- theme
-paq {'crispgm/nord-vim',  -- forked from official nord-vim, with treesitter and lsp supported
-    branch = 'develop'}
+paq {'crispgm/nord-vim', branch = 'develop'}
+paq {'joshdick/onedark.vim'}
 
 -- file
 paq 'mhinz/vim-startify'             -- stardup page
