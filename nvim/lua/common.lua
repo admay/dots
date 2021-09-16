@@ -1,3 +1,4 @@
+-- Utility functions for the rest of the config
 local vim = vim
 local M = {}
 

@@ -1,3 +1,4 @@
+-- Keymappings for ALL things
 local set_keymap = require('common').set_keymap
 local nvim_set_keymap = require('common').nvim_set_keymap
 

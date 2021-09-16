@@ -1,3 +1,4 @@
+-- Neovim built in option configuration
 local vim = vim
 local set_options = require('common').set_options
 
