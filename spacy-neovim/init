@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-readonly base_dir=$(git rev-parse --show-toplevel)
