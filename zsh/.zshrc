@@ -14,6 +14,7 @@ ZSH_THEME="spaceship"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/workspace/yummly/ship/scripts:$PATH
 
 plugins=(git zsh-autosuggestions common-aliases command-not-found zsh-syntax-highlighting)
 

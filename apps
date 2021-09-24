@@ -4,7 +4,6 @@ set -e
 
 apps=(
     "zsh"
-    "nvim"
     "git"
     "docker"
     "rust"
