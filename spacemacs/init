@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Install emacs
+sudo apt-get install emacs
+
+if [[ -d ~/.emacs.d ]]; then
+    echo "Backing up spacemacs"
+    mv ~/.emacs.d ~/.emacs.d.backup
+fi
+
+echo "Installing spacemacs"
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+if [[ -d ~/.spacemacs.d ]]; then
+    echo "Backing up spacemacs config"
+    mv ~/.spacemacs.d ~/.spacemacs.d.backup
+fi
+
+echo "Installing spacemacs config"
+git clone git@github.com:admay/spacemacs.d.git ~/.spacemacs.d
