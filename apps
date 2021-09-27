@@ -3,12 +3,14 @@
 set -e
 
 apps=(
-    "zsh"
-    "git"
-    "docker"
-    "rust"
     "alacritty"
+    "git"
+    "zsh"
     "tmux"
+    "clojure"
+    "spacemacs"
+    "rust"
+    "docker"
 )
 
 for app in "${apps[@]}"; do

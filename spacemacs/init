@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Install emacs
-sudo apt-get install emacs
-
 if [[ -d ~/.emacs.d ]]; then
     echo "Backing up spacemacs"
     mv ~/.emacs.d ~/.emacs.d.backup
