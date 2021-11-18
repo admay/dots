@@ -74,6 +74,11 @@ function x () {
   fi
 }
 
+function mousefix () {
+	xinput disable "DLL0945:00 04F3:311C Touchpad"
+	xinput enable "DLL0945:00 04F3:311C Touchpad"
+}
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
