@@ -16,6 +16,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/workspace/yummly/ship/scripts:$PATH
 
+export PATH="/home/michael/.ebcli-virtual-env/executables:$PATH"
+
+alias python='python3'
+
+
 plugins=(git zsh-autosuggestions common-aliases command-not-found zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -75,8 +80,8 @@ function x () {
 }
 
 function mousefix () {
-	xinput disable "DLL0945:00 04F3:311C Touchpad"
-	xinput enable "DLL0945:00 04F3:311C Touchpad"
+  xinput disable "DLL0945:00 04F3:311C Touchpad"
+  xinput enable "DLL0945:00 04F3:311C Touchpad"
 }
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
