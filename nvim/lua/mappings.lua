@@ -9,7 +9,7 @@ nnoremap('Y', 'y$')
 
 -- convenience
 nnoremap(';', ':')
-nnoremap('jk', '<Esc>')
+inoremap('jk', '<esc>')
 
 -- splits
 nnoremap('<c-h>', '<c-w>h')
