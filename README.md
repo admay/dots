@@ -20,7 +20,8 @@ Workflow:
 - [x] Tmux
 - [x] Oh My ZSH
 - [x] Alacritty
-- [x] Neovim 0.5
+- [x] Neovim 0.5 or higher
+- [x] Spacemacs
 - [x] Docker
 - [x] Docker Compose
 
@@ -28,14 +29,10 @@ Neovim Language Support:
 - [x] Bash
 - [x] Python
 - [x] Rust
+- [x] Clojure
 
-### Nord Themes
+Theme: [onedark][theme] by @joshdick
 
-- [Slack][nord-slack]
-- [Tmux][nord-tmux]
-- [Alacritty (WIP)][nord-alacritty]
+-----
+[theme]: https://github.com/joshdick/onedark.vim
 
----
-[nord-slack]: https://www.nordtheme.com/docs/ports/slack/installation
-[nord-tmux]: https://www.nordtheme.com/ports/tmux
-[nord-alacritty]: https://www.nordtheme.com/ports/alacritty

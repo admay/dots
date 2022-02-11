@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+readonly base_dir=$(git rev-parse --show-toplevel)
+readonly repo_init="$base_dir/nvim/init.lua"
+readonly repo_lua="$base_dir/nvim/lua"
+readonly repo_after="$base_dir/nvim/after"
+
+readonly nvim_dir="$HOME/.config/nvim"
+readonly nvim_init="$nvim_dir/init.lua"
+readonly nvim_lua="$nvim_dir/lua"
+readonly nvim_after="$nvim_dir/after"
+
+# Paq Neovim
+if [[ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/paqs/opt/paq-nvim" ]]
+then
+    echo "Installing Neovim Paq"
+    git clone https://github.com/savq/paq-nvim.git \
+        "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/paq-nvim
+else
+    echo "Neovim Paq is already installed, skipping"
+fi
+
+if [[ ! -d $nvim_dir ]]; then
+    echo "Neovim configuration directory missing, creating it now"
+    mkdir -p ~/.config/nvim
+fi
+
+DIFF_INIT=$(diff $repo_init $nvim_init)
+DIFF_LUA=$(diff -qr $repo_lua $nvim_lua)
+DIFF_AFTER=$(diff $repo_after $nvim_after)
+
+if [[ ! "$DIFF_INIT" == "" ]]; then
+    echo "Copying Neovim init.lua to $base_dir"
+    cp "$base_dir/nvim/init.lua" $nvim_init
+else
+    echo "Neovim init.lua is up to date, skipping"
+fi
+
+if [[ ! "$DIFF_LUA" == "" ]]; then
+    echo "Copying Neovim lua to $nvim_lua"
+    echo cp -r "$base_dir/nvim/lua" $nvim_dir
+    cp -r "$base_dir/nvim/lua" $nvim_dir
+else
+    echo "Neovim lua is up to date, skipping"
+fi
+
+if [[ ! "$DIFF_AFTER" == "" ]]; then
+    echo "Copying Neovim after to $nvim_after"
+    cp -r "$base_dir/nvim/after" $nvim_after
+else
+    echo "Neovim after is up to date, skipping"
+fi
+
+# Language servers
+echo "Installing the bash language server"
+yarn global add bash-language-server
+
+# Install Neovim packages
+echo "Neovim setup complete"
+
+echo
+echo "Run nvim +PaqInstall to finish setup"
+echo
