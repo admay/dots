@@ -1,0 +1,13 @@
+vim.g.vimwiki_list = {
+    {
+        path = '~/workspace/wiki-base/wiki/',
+        syntax = 'markdown',
+        ext = '.md',
+    },
+}
+vim.g.vimwiki_global_ext = 0
+vim.g.vimwiki_key_mappings = {
+    global = 0,
+    links = 0,
+    html = 0,
+}
