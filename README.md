@@ -1,5 +1,7 @@
 # dotfiles
 
+Warning: I have no idea if this works
+
 Dotfile configurations and bootstrapping for my personal use.
 
 Inspired by: https://github.com/crispgm/dotfiles
