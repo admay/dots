@@ -4,6 +4,8 @@ local inoremap = require('common').inoremap
 local vnoremap = require('common').vnoremap
 local cnoremap = require('common').cnoremap
 
+nnoremap('<space>', '<Nop>')
+
 -- editing
 nnoremap('Y', 'y$')
 
@@ -17,13 +19,17 @@ nnoremap('<c-j>', '<c-w>j')
 nnoremap('<c-k>', '<c-w>k')
 nnoremap('<c-l>', '<c-w>l')
 
--- LSP
-nnoremap('<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-nnoremap('<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-nnoremap('<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-nnoremap('<space>d', '<cmd>lua vim.lsp.buf.definition()<CR>')
-nnoremap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-nnoremap('<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>')
-nnoremap('<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>')
-nnoremap('<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
-nnoremap('<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+-- editing
+inoremap('<c-d>', '<Esc>ddi')
+
+-- Telescope
+-- General
+nnoremap('<leader>ff', '<cmd>Telescope find_files<cr>')
+nnoremap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+nnoremap('<leader>fb', '<cmd>Telescope buffers<cr>')
+nnoremap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+-- Code
+nnoremap('<leader>fr', '<cmd>Telescope lsp_references<cr>')
+nnoremap('<leader>fi', '<cmd>Telescope lsp_implementations<cr>')
+nnoremap('<leader>gs', '<cmd>Telescope git_status<cr>')
