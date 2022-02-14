@@ -21,7 +21,13 @@ export PATH="/home/michael/.ebcli-virtual-env/executables:$PATH"
 alias python='python3'
 
 
-plugins=(git zsh-autosuggestions common-aliases command-not-found zsh-syntax-highlighting)
+plugins=(
+    git
+    zsh-autosuggestions
+    common-aliases
+    command-not-found
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
