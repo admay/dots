@@ -19,6 +19,7 @@ return require('packer').startup({
         use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
         use('crispgm/telescope-heading.nvim') -- markdown heading
         use('AndrewRadev/undoquit.vim') -- restore closed tabs
+        use('preservim/nerdtree') -- nerd tree
 
         -- view
         use('google/vim-searchindex')           -- search index
