@@ -24,10 +24,19 @@ inoremap('<c-d>', '<Esc>ddi')
 
 -- Telescope
 -- General
-nnoremap('<leader>ff', '<cmd>Telescope find_files<cr>')
+nnoremap('<leader>ff', '<cmd>Telescope find_files hidden=true<cr>')
+nnoremap('<leader>fd', '<cmd>Telescope git_files<cr>')
 nnoremap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nnoremap('<leader>fb', '<cmd>Telescope buffers<cr>')
 nnoremap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+nnoremap('<leader>fl', '<cmd>Telescope lsp_document_symbols<cr>')
+nnoremap('<leader>fk', '<cmd>Telescope keymaps<cr>')
+nnoremap('<leader>fm', '<cmd>Telescope heading<cr>')
+
+-- nnoremap(
+--     '<leader>ff',
+--     '<cmd>Telescope find_files find_command=fd,--hidden,--no-ignore,--exclude,*.git,--type,f<cr>'
+-- )
 
 -- Code
 nnoremap('<leader>fr', '<cmd>Telescope lsp_references<cr>')

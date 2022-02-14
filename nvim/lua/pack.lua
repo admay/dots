@@ -20,6 +20,8 @@ return require('packer').startup({
         use('crispgm/telescope-heading.nvim') -- markdown heading
         use('AndrewRadev/undoquit.vim') -- restore closed tabs
         use('preservim/nerdtree') -- nerd tree
+        use('wincent/ferret') -- find and replace
+
 
         -- view
         use('google/vim-searchindex')           -- search index
