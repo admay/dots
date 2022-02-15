@@ -10,7 +10,6 @@ return require('packer').startup({
         use('nvim-lua/popup.nvim')
 
         -- colorscheme
-        use({'crispgm/nord-vim', opt = true, branch = 'develop'})
         use('joshdick/onedark.vim')
 
         -- file
@@ -18,20 +17,19 @@ return require('packer').startup({
         use('nvim-telescope/telescope.nvim') -- fuzzy picker
         use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
         use('crispgm/telescope-heading.nvim') -- markdown heading
-        use('AndrewRadev/undoquit.vim') -- restore closed tabs
         use('preservim/nerdtree') -- nerd tree
 
         -- view
-        use('google/vim-searchindex')           -- search index
-        use('ojroques/nvim-hardline')           -- status line
-        use('Yggdroot/indentLine')              -- indent line
-        use('dstein64/nvim-scrollview')         -- scroll bar
+        use('ojroques/nvim-hardline')           -- status line at bottom
+        use('Yggdroot/indentLine')              -- shows indent lines
+        use('dstein64/nvim-scrollview')         -- scroll bar at right side
         use('RRethy/vim-illuminate')            -- highlight hover word
-        use('lewis6991/gitsigns.nvim')          -- git signs
+        -- use('lewis6991/gitsigns.nvim')          -- git signs
+        use('airblade/vim-gitgutter')           -- git in the gutter
         use('winston0410/cmd-parser.nvim')      -- for range highlight
         use('winston0410/range-highlight.nvim') -- highlight range lines
         use('norcalli/nvim-colorizer.lua')      -- color codes rendering
-        use('crispgm/nvim-tabline')             -- tab line
+        use('crispgm/nvim-tabline')             -- tab line up top with multiple tabs
 
         -- edit
         use('tpope/vim-repeat') -- allow commands from plugin do repeat
@@ -62,10 +60,9 @@ return require('packer').startup({
                 'hrsh7th/cmp-path', -- cmp path
             },
         })
-        use('vimwiki/vimwiki') -- vimwiki
         use('Olical/conjure')
-        use('tpope/vim-dispatch')
         use('clojure-vim/vim-jack-in')
+        use('tpope/vim-dispatch')
         use('radenling/vim-dispatch-neovim')
 
         use('christoomey/vim-tmux-navigator')
