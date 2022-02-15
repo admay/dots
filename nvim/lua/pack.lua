@@ -30,24 +30,12 @@ return require('packer').startup({
         use('tpope/vim-repeat')
         use('tpope/vim-surround')
         use('tpope/vim-commentary')
-        use('christoomey/vim-system-copy')
-
-        use('AndrewRadev/splitjoin.vim')
-        use({
-            'steelsojka/pears.nvim', -- auto symbol pairs
-            config = function()
-                require('pears').setup(function(conf)
-                    conf.remove_pair_on_outer_backspace(false)
-                    conf.expand_on_enter(false)
-                    conf.preset('tag_matching')
-                end)
-            end,
-        })
+        use('steelsojka/pears.nvim')
 
         -- language
-        use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})  -- treesitter
-        use('nvim-treesitter/playground')                            -- treesitter playground
-        use('neovim/nvim-lspconfig')                                 -- lsp client config
+        use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+        use('nvim-treesitter/playground')
+        use('neovim/nvim-lspconfig')
         use({
             'hrsh7th/nvim-cmp', -- completion
             requires = {
@@ -60,7 +48,6 @@ return require('packer').startup({
         use('clojure-vim/vim-jack-in')
         use('tpope/vim-dispatch')
         use('radenling/vim-dispatch-neovim')
-
         use('christoomey/vim-tmux-navigator')
 
     end,
