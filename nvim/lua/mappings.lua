@@ -6,8 +6,12 @@ local cnoremap = require('common').cnoremap
 
 nnoremap('<space>', '<Nop>')
 
+-- navigating
+nnoremap('<space>ft', '<cmd>NERDTreeToggle<cr>')
+
 -- editing
 nnoremap('Y', 'y$')
+inoremap('<c-d>', '<Esc>ddi')
 
 -- convenience
 nnoremap(';', ':')
@@ -19,9 +23,6 @@ nnoremap('<c-j>', '<c-w>j')
 nnoremap('<c-k>', '<c-w>k')
 nnoremap('<c-l>', '<c-w>l')
 
--- editing
-inoremap('<c-d>', '<Esc>ddi')
-
 -- Telescope
 -- General
 nnoremap('<leader>ff', '<cmd>Telescope find_files hidden=true<cr>')
@@ -32,11 +33,6 @@ nnoremap('<leader>fh', '<cmd>Telescope help_tags<cr>')
 nnoremap('<leader>fl', '<cmd>Telescope lsp_document_symbols<cr>')
 nnoremap('<leader>fk', '<cmd>Telescope keymaps<cr>')
 nnoremap('<leader>fm', '<cmd>Telescope heading<cr>')
-
--- nnoremap(
---     '<leader>ff',
---     '<cmd>Telescope find_files find_command=fd,--hidden,--no-ignore,--exclude,*.git,--type,f<cr>'
--- )
 
 -- Code
 nnoremap('<leader>fr', '<cmd>Telescope lsp_references<cr>')
