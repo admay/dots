@@ -2,40 +2,36 @@ vim.cmd('packadd packer.nvim')
 
 return require('packer').startup({
     function(use)
+        -- initialization
         use('wbthomason/packer.nvim')
         use('lewis6991/impatient.nvim')
-
-        -- lib
         use('nvim-lua/plenary.nvim')
         use('nvim-lua/popup.nvim')
+        use('mhinz/vim-startify')
 
-        -- colorscheme
+        -- color scheme(s)
         use('joshdick/onedark.vim')
 
-        -- file
-        use('mhinz/vim-startify')            -- startup page
-        use('nvim-telescope/telescope.nvim') -- fuzzy picker
+        -- files and searching
+        use('nvim-telescope/telescope.nvim')
         use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
-        use('crispgm/telescope-heading.nvim') -- markdown heading
-        use('preservim/nerdtree') -- nerd tree
+        use('preservim/nerdtree')
 
         -- view
         use('ojroques/nvim-hardline')           -- status line at bottom
         use('Yggdroot/indentLine')              -- shows indent lines
         use('dstein64/nvim-scrollview')         -- scroll bar at right side
         use('RRethy/vim-illuminate')            -- highlight hover word
-        -- use('lewis6991/gitsigns.nvim')          -- git signs
-        use('airblade/vim-gitgutter')           -- git in the gutter
-        use('winston0410/cmd-parser.nvim')      -- for range highlight
+        use('airblade/vim-gitgutter')           -- git signs on the left
+        -- use('winston0410/cmd-parser.nvim')
         use('winston0410/range-highlight.nvim') -- highlight range lines
-        use('norcalli/nvim-colorizer.lua')      -- color codes rendering
-        use('crispgm/nvim-tabline')             -- tab line up top with multiple tabs
 
-        -- edit
-        use('tpope/vim-repeat') -- allow commands from plugin do repeat
-        use('tpope/vim-surround') -- toggle surround
-        use('tpope/vim-commentary') -- comments
-        use('christoomey/vim-system-copy') -- copy to system clipboard
+        -- code
+        use('tpope/vim-repeat')
+        use('tpope/vim-surround')
+        use('tpope/vim-commentary')
+        use('christoomey/vim-system-copy')
+
         use('AndrewRadev/splitjoin.vim')
         use({
             'steelsojka/pears.nvim', -- auto symbol pairs
