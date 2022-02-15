@@ -7,7 +7,7 @@ cmd('filetype plugin indent on')
 cmd('syntax enable')
 cmd('set cpoptions+=x')
 
-cmd('let mapleader=" "')
+cmd('let mapleader=","')
 
 -- systematic
 opt.encoding = 'utf-8'
