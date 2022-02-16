@@ -11,10 +11,7 @@ require('impatient').enable_profile()
 try_require('mappings')
 
 -- plugins
-try_require('plugins.cmp')
-try_require('plugins.hardline')
 try_require('plugins.lspconfig')
 try_require('plugins.colorscheme')
 try_require('plugins.telescope')
 try_require('plugins.treesitter')
-try_require('plugins.vimwiki')

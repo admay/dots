@@ -8,6 +8,7 @@ cmd('syntax enable')
 cmd('set cpoptions+=x')
 
 cmd('let mapleader=","')
+cmd('let maplocalleader=","')
 
 -- systematic
 opt.encoding = 'utf-8'

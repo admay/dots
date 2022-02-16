@@ -12,43 +12,38 @@ return require('packer').startup({
         -- color scheme(s)
         use('joshdick/onedark.vim')
 
-        -- files and searching
+        -- windows, files, and searching
         use('nvim-telescope/telescope.nvim')
         use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
         use('preservim/nerdtree')
+        use('christoomey/vim-tmux-navigator')
 
         -- view
-        use('ojroques/nvim-hardline')           -- status line at bottom
-        use('Yggdroot/indentLine')              -- shows indent lines
-        use('dstein64/nvim-scrollview')         -- scroll bar at right side
-        use('RRethy/vim-illuminate')            -- highlight hover word
-        use('airblade/vim-gitgutter')           -- git signs on the left
-        -- use('winston0410/cmd-parser.nvim')
-        use('winston0410/range-highlight.nvim') -- highlight range lines
+        use('ojroques/nvim-hardline')
+        use('Yggdroot/indentLine')
+        use('dstein64/nvim-scrollview')
+        use('RRethy/vim-illuminate')
+        use('airblade/vim-gitgutter')
+        use('winston0410/range-highlight.nvim')
 
-        -- code
+        -- general editing
         use('tpope/vim-repeat')
         use('tpope/vim-surround')
         use('tpope/vim-commentary')
-        use('steelsojka/pears.nvim')
+        use('guns/vim-sexp')
+        use('tpope/vim-sexp-mappings-for-regular-people')
+        use('jiangmiao/auto-pairs')
 
-        -- language
+        -- lsp
         use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
         use('nvim-treesitter/playground')
         use('neovim/nvim-lspconfig')
-        use({
-            'hrsh7th/nvim-cmp', -- completion
-            requires = {
-                'hrsh7th/cmp-nvim-lsp', -- cmp lsp
-                'hrsh7th/cmp-buffer', -- cmp buffer
-                'hrsh7th/cmp-path', -- cmp path
-            },
-        })
+
+        -- code
         use('Olical/conjure')
         use('clojure-vim/vim-jack-in')
         use('tpope/vim-dispatch')
         use('radenling/vim-dispatch-neovim')
-        use('christoomey/vim-tmux-navigator')
 
     end,
     config = {
