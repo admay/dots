@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+clj_version=""$clj_version""
+
 # Install Clojure if it doesn't exist
 if [[ ! -x clojure ]]; then
     echo "Installing clojure cli"
-    curl -O https://download.clojure.org/install/linux-install-1.10.2.774.sh
-    chmod +x linux-install-1.10.2.774.sh
-    sudo ./linux-install-1.10.2.774.sh
-    rm ./linux-install-1.10.2.774.sh
+    curl -O https://download.clojure.org/install/linux-install-"$clj_version".sh
+    chmod +x linux-install-"$clj_version".sh
+    sudo ./linux-install-"$clj_version".sh
+    rm ./linux-install-"$clj_version".sh
 fi
 
 # Backup the clojure dir if it exists
@@ -15,14 +17,14 @@ if [[ -d "~/.clojure" ]]; then
 fi
 
 # Install the .clojure stuff
-git clone git@github.com:admay/clojure-deps-edn.git ~/.clojure
+git clone git@github.com:practicalli/clojure-deps-edn.git $HOME/.clojure
 
 # Install Clojure deps
 echo "Installing Clojure deps"
 clojure -P
 
 # Print version
-clojure --version
+clojure -Sdescribe
 
 # Install clj kondo
 curl -sLO https://raw.githubusercontent.com/clj-kondo/clj-kondo/master/script/install-clj-kondo
